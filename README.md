@@ -23,18 +23,25 @@ python3 node.py --id C --port 8002 --peers http://<IP-A>:8000,http://<IP-B>:8001
 
 ## Scenario A:
 python3 client.py --node http://<IP-A>:8000 put x 1
+
 python3 client.py --node http://<IP-B>:8001 get x
+
 python3 client.py --node http://<IP-C>:8002 status
 
 
 ## Scenario B:
 python3 client.py --node http://<IP-A>:8000 put key1 "1"
+
 python3 client.py --node http://<IP-B>:8001 put key1 "2"
 
 
 ## Scenario C:
 Stop the python script on Node C (Ctrl+C)
+
 python3 client.py --node http://<IP-A>:8000 put two_key "C_is_down"
+
 Restart Node C: python3 node.py --id C --port 8002 --peers http://<IP-A>:8000,http://<IP-B>:8001
+
 python3 client.py --node http://<IP-A>:8000 put another_key "replicated_now"
+
 python3 client.py --node http://<IP-C>:8002 status
