@@ -11,13 +11,13 @@ Open the node port (e.g. 8000/8001/8002) on each EC2 instance for inbound traffi
 
 ## Run on EC2
 
-### A
+### node A
 python3 node.py --id A --port 8000 --peers http://<IP-B>:8001,http://<IP-A>:8002
 
-### B
+### node B
 python3 node.py --id B --port 8001 --peers http://<IP-A>:8000,http://<IP-C>:8002
 
-### C
+### node C
 python3 node.py --id C --port 8002 --peers http://<IP-A>:8000,http://<IP-B>:8001
 
 
